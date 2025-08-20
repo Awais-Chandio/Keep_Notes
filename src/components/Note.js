@@ -12,7 +12,7 @@ const Note = ({ title, content,id,handleDelete }) => {
   const { theme } = useTheme();
 
   return (
-    <View style={[styles.note, { backgroundColor: theme.noteBackground }]}>
+    <View style={[styles.note, { backgroundColor: theme.noteBackground,paddingTop: hp('4%') }]}>
       <TouchableOpacity onPress={()=>{Alert.alert('Confirm', 'Delete this note?', [ { text: 'Cancel' }, { text: 'Delete', onPress: () => handleDelete(id) }, ])}} style={styles.binButton}>
         <MaterialIcons size={hp('2.5%')} color={'#0A84FF'} name="delete" />
       </TouchableOpacity>
@@ -25,7 +25,6 @@ const Note = ({ title, content,id,handleDelete }) => {
 const styles = StyleSheet.create({
   note: {
     flex: 1,
-    paddingTop: hp('2%'),
     paddingBottom: hp('2%'),
     paddingLeft: hp('1.5%'),
     paddingRight: hp('1.5%'),

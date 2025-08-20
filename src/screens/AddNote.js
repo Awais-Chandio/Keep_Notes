@@ -92,7 +92,7 @@ const AddNote = ({ navigation, route }) => {
   }, []);
 
   return (
-    <View style={{flex: 1, backgroundColor: theme.noteBackground}}>
+    <View style={{flex: 1, backgroundColor: theme.noteBackground,paddingTop:hp('2%')}}>
       <KeyboardAvoidingView 
         style={{flex: 1}}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}

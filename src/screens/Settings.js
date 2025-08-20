@@ -32,7 +32,7 @@ const Settings = ({navigation}) => {
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.background }]}>
+    <View style={[styles.container, { backgroundColor: theme.background}]}>
       <View style={styles.header}>
          <TouchableOpacity onPress={()=>{navigation.goBack()}}>
           <Feather size={hp('2.5%')} color={theme.text} name='arrow-left' />
@@ -57,10 +57,11 @@ const Settings = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: hp('1%'),
+    paddingTop:hp('5%'),
+    paddingLeft:hp('2%'),
+    paddingRight:hp('2%'),
   },
   header: {
-    paddingTop: hp('1%'),
     paddingBottom: hp('1%'),
     flexDirection:'row',
     gap:wp('1%'),
