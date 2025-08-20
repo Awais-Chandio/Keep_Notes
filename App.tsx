@@ -1,45 +1,32 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import { ThemeProvider } from './src/theme/ThemeContext';
+import Splash from './src/screens/Splash';
+import Notes from './src/screens/Notes';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Settings from './src/screens/Settings';
+import AddNote from './src/screens/AddNote';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
-
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
+const Stack = createNativeStackNavigator();
+const App = () => {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
+    <SafeAreaView style={{ flex: 1, display: 'flex' }}>
+      <ThemeProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{ headerShown: false }}
+            initialRouteName="Splash"
+          >
+            <Stack.Screen name="Splash" component={Splash}></Stack.Screen>
+            <Stack.Screen name="Notes" component={Notes}></Stack.Screen>
+            <Stack.Screen name="AddNote" component={AddNote}></Stack.Screen>
+            <Stack.Screen name="Settings" component={Settings}></Stack.Screen>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ThemeProvider>
+    </SafeAreaView>
   );
-}
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;

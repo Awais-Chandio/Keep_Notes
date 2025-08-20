@@ -117,3 +117,39 @@ dependencies {
         implementation jscFlavor
     }
 }
+
+project.ext.vectoricons = [
+    iconFontNames: [
+        // Material Design
+        'MaterialIcons.ttf',
+        'MaterialCommunityIcons.ttf',
+        'MaterialIconsOutlined.ttf',
+        'MaterialIconsRound.ttf',
+        'MaterialIconsSharp.ttf',
+        'MaterialIconsTwoTone.ttf',
+        
+        // Font Awesome
+        'FontAwesome.ttf',
+        'FontAwesome5.ttf',
+        'FontAwesome5_Brands.ttf',
+        'FontAwesome5_Regular.ttf',
+        'FontAwesome5_Solid.ttf',
+        'FontAwesome6.ttf',
+        'FontAwesome6_Brands.ttf',
+        'FontAwesome6_Regular.ttf',
+        'FontAwesome6_Solid.ttf',
+        
+        // Others
+        'Ionicons.ttf',
+        'Feather.ttf',
+        'Entypo.ttf',
+        'Octicons.ttf',
+        'Zocial.ttf',
+        'EvilIcons.ttf',
+        'SimpleLineIcons.ttf',
+        'AntDesign.ttf',
+        'Foundation.ttf',
+        'Fontisto.ttf'
+    ]
+]
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
